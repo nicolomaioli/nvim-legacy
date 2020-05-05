@@ -109,7 +109,14 @@ nnoremap <leader>lc :lclose<CR>
 nnoremap <leader>cc :cclose<CR>
 tnoremap <C-e> <C-\><C-n>
 
-let g:coc_global_extensions = ['coc-tsserver', 'coc-deno', 'coc-eslint', 'coc-json', 'coc-diagnostic']
+let g:coc_global_extensions = [
+	\ 'coc-tsserver',
+	\ 'coc-deno',
+	\ 'coc-eslint',
+	\ 'coc-json',
+	\ 'coc-diagnostic'
+	\ ]
+
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
@@ -121,11 +128,11 @@ nmap <silent> gr <Plug>(coc-references)
 nnoremap <silent> <leader>dd :call <SID>show_documentation()<CR>
 
 function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  else
-    call CocAction('doHover')
-  endif
+	if (index(['vim','help'], &filetype) >= 0)
+		execute 'h '.expand('<cword>')
+	else
+		call CocAction('doHover')
+	endif
 endfunction
 
 let g:go_def_mapping_enabled = 0
@@ -134,5 +141,5 @@ let g:go_fmt_fail_silently = 1
 
 " Filetype specific
 augroup myterm | au!
-    au TermOpen * if &buftype ==# 'terminal' | setlocal nonumber signcolumn=no | endif
+	au TermOpen * if &buftype ==# 'terminal' | setlocal nonumber signcolumn=no | endif
 augroup end
