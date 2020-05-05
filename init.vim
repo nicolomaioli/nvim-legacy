@@ -118,3 +118,8 @@ endfunction
 let g:go_def_mapping_enabled = 0
 let g:go_metalinter_autosave = 1
 let g:go_fmt_fail_silently = 1
+
+" Filetype specific
+augroup myterm | au!
+    au TermOpen * if &buftype ==# 'terminal' | setlocal nonumber signcolumn=no | endif
+augroup end
