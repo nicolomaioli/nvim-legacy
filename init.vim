@@ -17,6 +17,7 @@ syntax enable
 runtime! macros/matchit.vim
 let mapleader=" "
 set number
+set colorcolumn=80
 set textwidth=79
 set linebreak
 set noexpandtab ts=4 sw=4
