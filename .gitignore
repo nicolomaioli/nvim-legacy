@@ -1,2 +1,5 @@
 # Plugins directory
 plugged/
+
+# Netrw
+.netrwhist
