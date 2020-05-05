@@ -89,6 +89,7 @@ if executable('rg')
 endif
 
 nnoremap <leader>fz :Files<CR>
+nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>sd :let @/=""<CR>
 nnoremap <leader>sr :%s/
 nnoremap <leader>lc :lclose<CR>
