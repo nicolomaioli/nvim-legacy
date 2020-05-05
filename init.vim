@@ -53,41 +53,52 @@ au InsertLeave * match ExtraWhitespace /\s\+$/
 
 " OS Specific configuration
 if !exists("g:os")
-    if has("win64") || has("win32") || has("win16")
-        let g:os = "Windows"
-    else
-        let g:os = substitute(system("uname"), '\n', '', '')
-    endif
+	if has("win64") || has("win32") || has("win16")
+		let g:os = "Windows"
+	else
+		let g:os = substitute(system("uname"), '\n', '', '')
+	endif
 endif
 
 if g:os == "Darwin"
-    set rtp+=/usr/local/opt/fzf
-    let g:python_host_prog="/usr/local/bin/python2"
-    let g:python3_host_prog="/usr/local/bin/python3"
+	set rtp+=/usr/local/opt/fzf
+	let g:python_host_prog="/usr/local/bin/python2"
+	let g:python3_host_prog="/usr/local/bin/python3"
 elseif g:os == "Linux"
-    set rtp+=~/.fzf
-    let g:python_host_prog="/usr/bin/python2"
-    let g:python3_host_prog="/usr/bin/python3"
+	set rtp+=~/.fzf
+	let g:python_host_prog="/usr/bin/python2"
+	let g:python3_host_prog="/usr/bin/python3"
 endif
 
 " Plugin configuration
 let g:lightline = {
-      \ 'colorscheme': 'nord',
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste', 'cocstatus' ],
-      \             [  'gitbranch', 'readonly', 'relativepath', 'modified' ] ]
-      \ },
-      \ 'component': {
-      \   'relativepath': '%f'
-      \ },
-      \ 'component_function': {
-      \   'gitbranch': 'fugitive#head',
-      \   'cocstatus': 'coc#status',
-      \ },
-      \ }
+	\ 	'colorscheme': 'nord',
+	\ 	'active': {
+	\ 		'left': [
+	\ 			[
+	\ 				'mode',
+	\ 				'paste'
+	\ 			],
+	\ 			[
+	\ 				'cocstatus',
+	\ 				'gitbranch',
+	\ 				'readonly',
+	\ 				'relativepath',
+	\ 				'modified'
+	\ 			]
+	\ 		]
+	\ 	},
+	\ 	'component': {
+	\ 		'relativepath': '%f'
+	\ 	},
+	\ 	'component_function': {
+	\ 		'gitbranch': 'fugitive#head',
+	\ 		'cocstatus': 'coc#status'
+	\ 	}
+	\ }
 
 if executable('rg')
-  let g:ackprg = 'rg --vimgrep'
+	let g:ackprg = 'rg --vimgrep'
 endif
 
 nnoremap <leader>fz :Files<CR>
