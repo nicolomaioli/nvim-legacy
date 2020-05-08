@@ -127,6 +127,7 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
+nmap <silent> <leader>rn <Plug>(coc-rename)
 nnoremap <silent> <leader>dd :call <SID>show_documentation()<CR>
 
 function! s:show_documentation()
