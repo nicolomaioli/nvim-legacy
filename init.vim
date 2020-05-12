@@ -2,6 +2,7 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'arcticicestudio/nord-vim'
 Plug 'fatih/vim-go'
 Plug 'itchyny/lightline.vim'
+Plug 'joshdick/onedark.vim'
 Plug 'junegunn/fzf.vim'
 Plug 'mattn/emmet-vim'
 Plug 'mhinz/vim-signify'
@@ -19,6 +20,7 @@ filetype plugin on
 syntax enable
 runtime! macros/matchit.vim
 let mapleader=" "
+set termguicolors
 set number
 set colorcolumn=80
 set textwidth=79
@@ -47,7 +49,8 @@ set signcolumn=yes
 set omnifunc=syntaxcomplete#Complete
 silent! helptags ALL
 
-colorscheme nord
+colorscheme onedark
+let g:onedark_terminal_italics=1
 highlight ExtraWhitespace ctermbg=red guibg=red
 au InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 au InsertLeave * match ExtraWhitespace /\s\+$/
@@ -73,7 +76,7 @@ endif
 
 " Plugin configuration
 let g:lightline = {
-	\ 	'colorscheme': 'nord',
+	\ 	'colorscheme': 'onedark',
 	\ 	'active': {
 	\ 		'left': [
 	\ 			[
