@@ -16,6 +16,20 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 call plug#end()
 
+if has_key(environ(), 'CLIPD_ENABLE')
+	let g:clipboard = {
+		  \   'name': 'clipd',
+		  \   'copy': {
+		  \      '+': 'clipd yank',
+		  \      '*': 'clipd yank',
+		  \    },
+		  \   'paste': {
+		  \      '+': 'clipd paste',
+		  \      '*': 'clipd paste',
+		  \   },
+		  \ }
+endif
+
 filetype plugin on
 syntax enable
 runtime! macros/matchit.vim
