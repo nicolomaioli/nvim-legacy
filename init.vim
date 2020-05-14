@@ -173,3 +173,5 @@ let g:go_implements_mode = 'gopls'
 augroup myterm | au!
 	au TermOpen * if &buftype ==# 'terminal' | setlocal nonumber signcolumn=no | endif
 augroup end
+
+au FileType javascript,typescript,json,html set expandtab ts=2 sw=2
