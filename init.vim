@@ -1,6 +1,7 @@
 call plug#begin('~/.config/nvim/plugged')
 Plug 'arcticicestudio/nord-vim'
 Plug 'fatih/vim-go'
+Plug 'hashivim/vim-terraform'
 Plug 'itchyny/lightline.vim'
 Plug 'joshdick/onedark.vim'
 Plug 'junegunn/fzf.vim'
@@ -175,6 +176,9 @@ let g:go_imports_autosave = 1
 let g:go_doc_keywordprg_enabled = 0
 let g:go_doc_popup_window = 1
 let g:go_implements_mode = 'gopls'
+
+" Terraform
+let g:terraform_fmt_on_save = 1
 
 " Filetype specific
 augroup myterm | au!
