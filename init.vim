@@ -129,6 +129,13 @@ nnoremap <leader>lc :lclose<CR>
 nnoremap <leader>cc :cclose<CR>
 tnoremap <C-e> <C-\><C-n>
 
+" move between windows
+nnoremap <leader>wh <C-w>h
+nnoremap <leader>wj <C-w>j
+nnoremap <leader>wk <C-w>k
+nnoremap <leader>wl <C-w>l
+nnoremap <leader>wo <C-w>o
+
 let g:coc_global_extensions = [
 	\ 'coc-tsserver',
 	\ 'coc-deno',
