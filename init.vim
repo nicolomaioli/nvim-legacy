@@ -118,6 +118,7 @@ let g:lightline = {
 
 if executable('rg')
 	let g:ackprg = 'rg --vimgrep'
+	let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --no-ignore-vcs --follow --glob "!{node_modules/*,.git/*}"'
 endif
 
 nnoremap <leader>fz :Files<CR>
@@ -185,4 +186,4 @@ augroup myterm | au!
 	au TermOpen * if &buftype ==# 'terminal' | setlocal nonumber signcolumn=no | endif
 augroup end
 
-au FileType javascript,typescript,json,html set expandtab ts=2 sw=2
+au FileType javascript,typescript,json,yaml,html set expandtab ts=2 sw=2

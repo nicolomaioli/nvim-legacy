@@ -1,25 +1,30 @@
 {
-	"javascript.validate.enable": false,
-    "eslint.filetypes": [
-        "javascript",
-        "typescript"
-    ],
-    "javascript.suggestionActions.enabled": false,
-    "eslint.run": "onType",
-    "eslint.autoFixOnSave": true,
-    "languageserver": {
-        "golang": {
-            "command": "gopls",
-            "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
-            "filetypes": ["go"],
-            "initializationOptions": {
-                "usePlaceholders": true
-            }
-        },
-        "terraform": {
-            "command": "terraform-lsp",
-            "filetypes": ["terraform"],
-            "initializationOptions": {}
-        }
+  "javascript.validate.enable": false,
+  "eslint.filetypes": [
+    "javascript",
+    "typescript"
+  ],
+  "javascript.suggestionActions.enabled": false,
+  "eslint.run": "onType",
+  "eslint.autoFixOnSave": true,
+  "languageserver": {
+    "golang": {
+      "command": "gopls",
+      "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
+      "filetypes": ["go"],
+      "initializationOptions": {
+        "usePlaceholders": true
+      }
+    },
+    "terraform": {
+      "command": "terraform-ls",
+      "args": ["serve"],
+      "filetypes": [
+        "terraform",
+        "tf"
+      ],
+      "initializationOptions": {},
+      "settings": {}
     }
+  }
 }
