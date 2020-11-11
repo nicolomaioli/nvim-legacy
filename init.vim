@@ -143,6 +143,7 @@ let g:coc_global_extensions = [
 	\ 'coc-deno',
 	\ 'coc-eslint',
 	\ 'coc-json',
+	\ 'coc-ccls',
 	\ 'coc-diagnostic'
 	\ ]
 
