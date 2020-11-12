@@ -187,3 +187,4 @@ augroup myterm | au!
 augroup end
 
 au FileType javascript,typescript,json,yaml,html set expandtab ts=2 sw=2
+au FileType c set expandtab ts=4 sw=4
