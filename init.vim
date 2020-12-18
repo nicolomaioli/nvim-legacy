@@ -143,7 +143,8 @@ let g:coc_global_extensions = [
 	\ 'coc-deno',
 	\ 'coc-eslint',
 	\ 'coc-json',
-	\ 'coc-diagnostic'
+	\ 'coc-diagnostic',
+	\ 'coc-python'
 	\ ]
 
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
