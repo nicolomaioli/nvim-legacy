@@ -10,6 +10,4 @@
 	- [`clipd`](https://github.com/nicolomaioli/clipd)
 - Post-install:
 	- `$ nvim +PlugInstall`
-	- `$ nvim +CocInstall`
-	- `$ nvim +GoInstallBinaries`
 	- `$ nvim +checkhealth`

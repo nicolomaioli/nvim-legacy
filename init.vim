@@ -1,14 +1,10 @@
 call plug#begin('~/.config/nvim/plugged')
-Plug 'arcticicestudio/nord-vim'
-Plug 'fatih/vim-go'
-Plug 'hashivim/vim-terraform'
 Plug 'itchyny/lightline.vim'
 Plug 'joshdick/onedark.vim'
 Plug 'junegunn/fzf.vim'
 Plug 'mattn/emmet-vim'
 Plug 'mhinz/vim-signify'
 Plug 'mileszs/ack.vim'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'Raimondi/delimitMate'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-commentary'
@@ -16,20 +12,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 call plug#end()
-
-if has_key(environ(), 'CLIPD_ENABLE')
-	let g:clipboard = {
-		  \   'name': 'clipd',
-		  \   'copy': {
-		  \      '+': 'clipd yank',
-		  \      '*': 'clipd yank',
-		  \    },
-		  \   'paste': {
-		  \      '+': 'clipd paste',
-		  \      '*': 'clipd paste',
-		  \   },
-		  \ }
-endif
 
 filetype plugin on
 syntax enable
@@ -137,50 +119,6 @@ nnoremap <leader>wj <C-w>j
 nnoremap <leader>wk <C-w>k
 nnoremap <leader>wl <C-w>l
 nnoremap <leader>wo <C-w>o
-
-let g:coc_global_extensions = [
-	\ 'coc-tsserver',
-	\ 'coc-deno',
-	\ 'coc-eslint',
-	\ 'coc-json',
-	\ 'coc-diagnostic',
-	\ 'coc-python'
-	\ ]
-
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
-nmap <silent> ]g <Plug>(coc-diagnostic-next)
-
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
-
-nmap <silent> <leader>rn <Plug>(coc-rename)
-nnoremap <silent> <leader>dd :call <SID>show_documentation()<CR>
-
-function! s:show_documentation()
-	if (index(['vim','help'], &filetype) >= 0)
-		execute 'h '.expand('<cword>')
-	else
-		call CocAction('doHover')
-	endif
-endfunction
-
-" vim-go
-let g:go_list_type = 'quickfix'
-let g:go_def_mapping_enabled = 0
-let g:go_term_enabled = 1
-let g:go_metalinter_autosave = 0
-let g:go_fmt_command = 'gopls'
-let g:go_fmt_fail_silently = 1
-let g:go_imports_mode = 'gopls'
-let g:go_imports_autosave = 1
-let g:go_doc_keywordprg_enabled = 0
-let g:go_doc_popup_window = 1
-let g:go_implements_mode = 'gopls'
-
-" Terraform
-let g:terraform_fmt_on_save = 1
 
 " Filetype specific
 augroup myterm | au!
