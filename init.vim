@@ -1,4 +1,6 @@
 call plug#begin('~/.config/nvim/plugged')
+Plug 'neovim/nvim-lspconfig'
+Plug 'hrsh7th/nvim-compe'
 Plug 'itchyny/lightline.vim'
 Plug 'joshdick/onedark.vim'
 Plug 'junegunn/fzf.vim'
@@ -119,6 +121,21 @@ nnoremap <leader>wj <C-w>j
 nnoremap <leader>wk <C-w>k
 nnoremap <leader>wl <C-w>l
 nnoremap <leader>wo <C-w>o
+
+" LSP
+nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>
+nnoremap <silent> gD <cmd>lua vim.lsp.buf.declaration()<CR>
+nnoremap <silent> gr <cmd>lua vim.lsp.buf.references()<CR>
+nnoremap <silent> gi <cmd>lua vim.lsp.buf.implementation()<CR>
+nnoremap <silent> K <cmd>lua vim.lsp.buf.hover()<CR>
+nnoremap <silent> <C-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
+nnoremap <silent> <C-n> <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
+nnoremap <silent> <C-p> <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
+
+" Load lua configuration
+luafile ~/.config/nvim/lua/lsp/compe.lua
+luafile ~/.config/nvim/lua/lsp/tsserver.lua
+luafile ~/.config/nvim/lua/lsp/diagnostic.lua
 
 " Filetype specific
 augroup myterm | au!
