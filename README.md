@@ -7,8 +7,8 @@
 		- *MacOs*: `brew install fzf` then `$(brew --prefix)/opt/fzf/install`
 	- `ripgrep`
 	- Language servers:
-		- tsserver `npm i -g typescript typescript typescript-language-server`
-		- diagnostic ls `npm i -g diagnostic-language-server`
+		- tsserver
+		- efm
 - Post-install:
 	- `$ nvim +PlugInstall`
 	- `$ nvim +checkhealth`

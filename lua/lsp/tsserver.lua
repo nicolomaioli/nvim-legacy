@@ -1,7 +1,8 @@
 require'lspconfig'.tsserver.setup {
-    filetypes = {
-        'javascript', 'javascriptreact', 'javascript.jsx', 'typescript',
-        'typescriptreact', 'typescript.tsx'
-    },
-    settings = {documentFormatting = false}
+    on_attach = function(client)
+        if client.config.flags then
+            client.config.flags.allow_incremental_sync = true
+        end
+        client.resolved_capabilities.document_formatting = false
+    end
 }
