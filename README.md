@@ -7,8 +7,11 @@
 		- *MacOs*: `brew install fzf` then `$(brew --prefix)/opt/fzf/install`
 	- `ripgrep`
 	- Language servers:
-		- tsserver
 		- efm
+		- gopls
+		- terraform-ls
+		- tsserver
+		- yamlls
 - Post-install:
 	- `$ nvim +PlugInstall`
 	- `$ nvim +checkhealth`

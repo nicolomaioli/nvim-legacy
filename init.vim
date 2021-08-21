@@ -136,6 +136,9 @@ nnoremap <silent> <C-p> <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
 luafile ~/.config/nvim/lua/lsp/compe.lua
 luafile ~/.config/nvim/lua/lsp/tsserver.lua
 luafile ~/.config/nvim/lua/lsp/efm.lua
+luafile ~/.config/nvim/lua/lsp/gopls.lua
+luafile ~/.config/nvim/lua/lsp/yaml.lua
+luafile ~/.config/nvim/lua/lsp/terraform.lua
 
 " Filetype specific
 augroup myterm | au!
