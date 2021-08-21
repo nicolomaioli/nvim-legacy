@@ -13,6 +13,7 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
+Plug 'akinsho/nvim-toggleterm.lua'
 call plug#end()
 
 filetype plugin on
@@ -107,12 +108,13 @@ endif
 
 nnoremap <leader>fz :Files<CR>
 nnoremap <leader>bb :Buffers<CR>
-nnoremap <leader>gs :Gstatus<CR>
+nnoremap <leader>gs :Git<CR>
 nnoremap <leader>kb :NERDTreeToggle<CR>
 nnoremap <leader>sd :let @/=""<CR>
 nnoremap <leader>sr :%s/
 nnoremap <leader>lc :lclose<CR>
 nnoremap <leader>cc :cclose<CR>
+nnoremap <leader>R :source $MYVIMRC<CR>
 tnoremap <C-e> <C-\><C-n>
 
 " move between windows
@@ -132,13 +134,16 @@ nnoremap <silent> <C-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
 nnoremap <silent> <C-n> <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
 nnoremap <silent> <C-p> <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
 
-" Load lua configuration
+" Load lsp config
 luafile ~/.config/nvim/lua/lsp/compe.lua
 luafile ~/.config/nvim/lua/lsp/tsserver.lua
 luafile ~/.config/nvim/lua/lsp/efm.lua
 luafile ~/.config/nvim/lua/lsp/gopls.lua
 luafile ~/.config/nvim/lua/lsp/yaml.lua
 luafile ~/.config/nvim/lua/lsp/terraform.lua
+
+" Load lua plugins
+luafile ~/.config/nvim/lua/plugins/nvim-toggleterm.lua
 
 " Filetype specific
 augroup myterm | au!
