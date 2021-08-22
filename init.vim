@@ -106,6 +106,8 @@ if executable('rg')
 	let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --no-ignore-vcs --follow --glob "!{node_modules/*,.git/*}"'
 endif
 
+let NERDTreeShowHidden=1
+
 nnoremap <leader>fz :Files<CR>
 nnoremap <leader>bb :Buffers<CR>
 nnoremap <leader>gs :Git<CR>
