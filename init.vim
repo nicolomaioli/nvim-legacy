@@ -15,6 +15,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'akinsho/nvim-toggleterm.lua'
 Plug 'hashivim/vim-terraform'
+Plug 'sheerun/vim-polyglot'
 call plug#end()
 
 filetype plugin on
