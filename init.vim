@@ -1,11 +1,11 @@
 call plug#begin('~/.config/nvim/plugged')
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/nvim-compe'
-Plug 'itchyny/lightline.vim'
-Plug 'joshdick/onedark.vim', { 'branch': 'main' }
+Plug 'hoob3rt/lualine.nvim'
+Plug 'ryanoasis/vim-devicons'
+Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 Plug 'mattn/emmet-vim'
 Plug 'mhinz/vim-signify'
-Plug 'mileszs/ack.vim'
 Plug 'Raimondi/delimitMate'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-commentary'
@@ -55,8 +55,7 @@ set omnifunc=syntaxcomplete#Complete
 set sessionoptions+=options,resize,winpos,terminal
 silent! helptags ALL
 
-colorscheme onedark
-let g:onedark_terminal_italics=1
+colorscheme tokyonight
 highlight ExtraWhitespace ctermbg=red guibg=red
 au InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 au InsertLeave * match ExtraWhitespace /\s\+$/
@@ -79,34 +78,9 @@ elseif g:os == "Linux"
 endif
 
 " Plugin configuration
-let g:lightline = {
-	\ 	'colorscheme': 'onedark',
-	\ 	'active': {
-	\ 		'left': [
-	\ 			[
-	\ 				'mode',
-	\ 				'paste'
-	\ 			],
-	\ 			[
-	\ 				'cocstatus',
-	\ 				'gitbranch',
-	\ 				'readonly',
-	\ 				'relativepath',
-	\ 				'modified'
-	\ 			]
-	\ 		]
-	\ 	},
-	\ 	'component': {
-	\ 		'relativepath': '%f'
-	\ 	},
-	\ 	'component_function': {
-	\ 		'gitbranch': 'fugitive#head',
-	\ 		'cocstatus': 'coc#status'
-	\ 	}
-	\ }
-
 let NERDTreeShowHidden=1
 
+" Mappings
 nnoremap <leader>bb :Buffers<CR>
 nnoremap <leader>gs :Git<CR>
 nnoremap <leader>kb :NERDTreeToggle<CR>
@@ -144,6 +118,7 @@ luafile ~/.config/nvim/lua/lsp/yaml.lua
 luafile ~/.config/nvim/lua/lsp/terraform.lua
 
 " Load lua plugins
+luafile ~/.config/nvim/lua/plugins/lualine.lua
 luafile ~/.config/nvim/lua/plugins/nvim-toggleterm.lua
 
 " Telescope
