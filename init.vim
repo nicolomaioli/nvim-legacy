@@ -2,8 +2,7 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/nvim-compe'
 Plug 'itchyny/lightline.vim'
-Plug 'joshdick/onedark.vim'
-Plug 'junegunn/fzf.vim'
+Plug 'joshdick/onedark.vim', { 'branch': 'main' }
 Plug 'mattn/emmet-vim'
 Plug 'mhinz/vim-signify'
 Plug 'mileszs/ack.vim'
@@ -18,7 +17,7 @@ Plug 'hashivim/vim-terraform'
 Plug 'sheerun/vim-polyglot'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
-Plug 'rmagatti/auto-session'
+Plug 'rmagatti/auto-session', { 'branch': 'main' }
 Plug 'rmagatti/session-lens', { 'branch': 'main' }
 call plug#end()
 
@@ -115,7 +114,6 @@ endif
 
 let NERDTreeShowHidden=1
 
-nnoremap <leader>fz :Files<CR>
 nnoremap <leader>bb :Buffers<CR>
 nnoremap <leader>gs :Git<CR>
 nnoremap <leader>kb :NERDTreeToggle<CR>
