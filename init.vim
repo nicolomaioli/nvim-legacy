@@ -71,11 +71,9 @@ if !exists("g:os")
 endif
 
 if g:os == "Darwin"
-	set rtp+=/usr/local/opt/fzf
 	let g:python_host_prog="/usr/local/bin/python2"
 	let g:python3_host_prog="/usr/local/bin/python3"
 elseif g:os == "Linux"
-	set rtp+=~/.fzf
 	let g:python_host_prog="/usr/bin/python2"
 	let g:python3_host_prog="/usr/bin/python3"
 endif
