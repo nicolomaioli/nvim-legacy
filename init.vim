@@ -105,11 +105,6 @@ let g:lightline = {
 	\ 	}
 	\ }
 
-if executable('rg')
-	let g:ackprg = 'rg --vimgrep'
-	let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --no-ignore-vcs --follow --glob "!{node_modules/*,.git/*}"'
-endif
-
 let NERDTreeShowHidden=1
 
 nnoremap <leader>bb :Buffers<CR>
