@@ -2,7 +2,8 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/nvim-compe'
 Plug 'hoob3rt/lualine.nvim'
-Plug 'ryanoasis/vim-devicons'
+Plug 'alvarosevilla95/luatab.nvim'
+Plug 'kyazdani42/nvim-web-devicons'
 Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 Plug 'mattn/emmet-vim'
 Plug 'mhinz/vim-signify'
@@ -53,6 +54,7 @@ set shortmess+=c
 set signcolumn=yes
 set omnifunc=syntaxcomplete#Complete
 set sessionoptions+=options,resize,winpos,terminal
+set tabline=%!v:lua.require\'luatab\'.tabline()
 silent! helptags ALL
 
 colorscheme tokyonight
