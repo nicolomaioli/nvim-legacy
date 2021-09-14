@@ -97,6 +97,11 @@ nnoremap <leader>wl <C-w>l
 nnoremap <leader>wo <C-w>o
 
 " LSP
+
+" Prioritise LSP signs over signify's diff
+let g:signify_priority = 5
+
+" Mappings
 nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>
 nnoremap <silent> gD <cmd>lua vim.lsp.buf.declaration()<CR>
 nnoremap <silent> gr <cmd>lua vim.lsp.buf.references()<CR>
@@ -108,7 +113,8 @@ nnoremap <silent> <C-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
 nnoremap <silent> <C-n> <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
 nnoremap <silent> <C-p> <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
 
-" Load lsp config
+" Configs
+luafile ~/.config/nvim/lua/lsp/global.lua
 luafile ~/.config/nvim/lua/lsp/compe.lua
 luafile ~/.config/nvim/lua/lsp/tsserver.lua
 luafile ~/.config/nvim/lua/lsp/efm.lua
