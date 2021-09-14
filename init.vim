@@ -18,8 +18,6 @@ Plug 'hashivim/vim-terraform'
 Plug 'sheerun/vim-polyglot'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
-Plug 'rmagatti/auto-session', { 'branch': 'main' }
-Plug 'rmagatti/session-lens', { 'branch': 'main' }
 call plug#end()
 
 filetype plugin on
@@ -53,7 +51,6 @@ set updatetime=300
 set shortmess+=c
 set signcolumn=yes
 set omnifunc=syntaxcomplete#Complete
-set sessionoptions+=options,resize,winpos,terminal
 set tabline=%!v:lua.require\'luatab\'.tabline()
 silent! helptags ALL
 
@@ -128,7 +125,6 @@ nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
 nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
 nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
 nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
-nnoremap <leader>fs <cmd>lua require('session-lens').search_session()<cr>
 
 " Filetype specific
 augroup myterm | au!
