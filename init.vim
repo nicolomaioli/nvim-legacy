@@ -80,7 +80,6 @@ endif
 let NERDTreeShowHidden=1
 
 " Mappings
-nnoremap <leader>bb :Buffers<CR>
 nnoremap <leader>gs :Git<CR>
 nnoremap <leader>kb :NERDTreeToggle<CR>
 nnoremap <leader>sd :let @/=""<CR>
