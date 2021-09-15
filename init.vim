@@ -4,7 +4,7 @@ Plug 'hrsh7th/nvim-compe'
 Plug 'hoob3rt/lualine.nvim'
 Plug 'alvarosevilla95/luatab.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
-Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
+Plug 'morhetz/gruvbox'
 Plug 'mattn/emmet-vim'
 Plug 'mhinz/vim-signify'
 Plug 'Raimondi/delimitMate'
@@ -54,7 +54,10 @@ set omnifunc=syntaxcomplete#Complete
 set tabline=%!v:lua.require\'luatab\'.tabline()
 silent! helptags ALL
 
-colorscheme tokyonight
+let g:gruvbox_invert_selection=0
+let g:gruvbox_italic=1
+colorscheme gruvbox
+
 highlight ExtraWhitespace ctermbg=red guibg=red
 au InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 au InsertLeave * match ExtraWhitespace /\s\+$/
