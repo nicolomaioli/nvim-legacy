@@ -84,11 +84,11 @@ let NERDTreeShowHidden=1
 
 " Mappings
 nnoremap <leader>gs :Git<CR>
+nnoremap <leader>gp :Git push<CR>
 nnoremap <leader>kb :NERDTreeToggle<CR>
 nnoremap <leader>sd :let @/=""<CR>
 nnoremap <leader>sr :%s/
-nnoremap <leader>lc :lclose<CR>
-nnoremap <leader>cc :cclose<CR>
+nnoremap <leader>cc :close<CR>
 nnoremap <leader>R :source $MYVIMRC<CR>
 tnoremap <C-e> <C-\><C-n>
 
