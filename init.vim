@@ -88,7 +88,8 @@ nnoremap <leader>gp :Git push<CR>
 nnoremap <leader>kb :NERDTreeToggle<CR>
 nnoremap <leader>sd :let @/=""<CR>
 nnoremap <leader>sr :%s/
-nnoremap <leader>cc :close<CR>
+nnoremap <leader>cl :close<CR>
+nnoremap <leader>cc :cclose<CR>
 nnoremap <leader>R :source $MYVIMRC<CR>
 tnoremap <C-e> <C-\><C-n>
 
