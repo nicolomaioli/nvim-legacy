@@ -2,9 +2,8 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/nvim-compe'
 Plug 'hoob3rt/lualine.nvim'
-Plug 'alvarosevilla95/luatab.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
-Plug 'morhetz/gruvbox'
+Plug 'joshdick/onedark.vim'
 Plug 'mattn/emmet-vim'
 Plug 'mhinz/vim-signify'
 Plug 'Raimondi/delimitMate'
@@ -51,12 +50,9 @@ set updatetime=300
 set shortmess+=c
 set signcolumn=yes
 set omnifunc=syntaxcomplete#Complete
-set tabline=%!v:lua.require\'luatab\'.tabline()
 silent! helptags ALL
 
-let g:gruvbox_invert_selection=0
-let g:gruvbox_italic=1
-colorscheme gruvbox
+colorscheme onedark
 
 highlight ExtraWhitespace ctermbg=red guibg=red
 au InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
