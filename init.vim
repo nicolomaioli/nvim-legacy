@@ -137,5 +137,8 @@ augroup myterm | au!
 	au TermOpen * if &buftype ==# 'terminal' | setlocal nonumber signcolumn=no | endif
 augroup end
 
-au FileType javascript,typescript,javascriptreact,typescriptreact,json,yaml,html,css set expandtab ts=2 sw=2
-au FileType c set expandtab ts=4 sw=4
+au FileType javascript,typescript,javascriptreact,typescriptreact setlocal expandtab ts=2 sw=2
+au FileType html,css setlocal expandtab ts=2 sw=2
+au FileType json,yaml setlocal expandtab ts=2 sw=2
+au FileType markdown setlocal spell
+au FileType c setlocal expandtab ts=4 sw=4
