@@ -9,6 +9,11 @@ local eslint = {
     formatStdin = true
 }
 
+local prettier = {
+    formatCommand = 'prettier --stdin-filepath ${INPUT}',
+    formatStdin = true
+}
+
 local lua_format = {formatCommand = "lua-format -i", formatStdin = true}
 
 lspconfig.efm.setup {
@@ -21,16 +26,17 @@ lspconfig.efm.setup {
     settings = {
         languages = {
             lua = {lua_format},
-            javascript = {eslint},
-            javascriptreact = {eslint},
-            ["javascript.jsx"] = {eslint},
-            typescript = {eslint},
-            typescriptreact = {eslint},
-            ["typescript.tsx"] = {eslint}
+            javascript = {prettier, eslint},
+            javascriptreact = {prettier, eslint},
+            typescript = {prettier, eslint},
+            typescriptreact = {prettier, eslint},
+            css = {prettier},
+            html = {prettier},
+            json = {prettier}
         }
     },
     filetypes = {
-        "lua", "javascript", "javascriptreact", "javascript.jsx", "typescript",
-        "typescript.tsx", "typescriptreact"
+        "lua", "javascript", "javascriptreact", "typescript", "typescriptreact",
+        "css", "html", "json"
     }
 }
