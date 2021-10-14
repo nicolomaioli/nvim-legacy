@@ -1,5 +1,9 @@
 call plug#begin('~/.config/nvim/plugged')
 Plug 'arcticicestudio/nord-vim'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/nvim-compe'
 Plug 'hoob3rt/lualine.nvim'
@@ -8,10 +12,6 @@ Plug 'mattn/emmet-vim'
 Plug 'mhinz/vim-signify'
 Plug 'Raimondi/delimitMate'
 Plug 'scrooloose/nerdtree'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-unimpaired'
 Plug 'akinsho/nvim-toggleterm.lua'
 Plug 'hashivim/vim-terraform'
 Plug 'sheerun/vim-polyglot'
@@ -23,6 +23,7 @@ filetype plugin on
 syntax enable
 runtime! macros/matchit.vim
 let mapleader=" "
+set shm+=I
 set termguicolors
 set number
 set colorcolumn=80
