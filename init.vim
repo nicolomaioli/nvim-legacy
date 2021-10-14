@@ -1,9 +1,9 @@
 call plug#begin('~/.config/nvim/plugged')
+Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/nvim-compe'
 Plug 'hoob3rt/lualine.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
-Plug 'joshdick/onedark.vim'
 Plug 'mattn/emmet-vim'
 Plug 'mhinz/vim-signify'
 Plug 'Raimondi/delimitMate'
@@ -52,7 +52,7 @@ set signcolumn=yes
 set omnifunc=syntaxcomplete#Complete
 silent! helptags ALL
 
-colorscheme onedark
+colorscheme dracula
 
 highlight ExtraWhitespace ctermbg=red guibg=red
 au InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
