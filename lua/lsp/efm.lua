@@ -14,7 +14,10 @@ local prettier = {
     formatStdin = true
 }
 
-local lua_format = {formatCommand = "lua-format -i", formatStdin = true}
+local lua_format = {
+    formatCommand = "lua-format -i --no-keep-simple-function-one-line --no-break-after-operator --column-limit=80 --break-after-table-lb",
+    formatStdin = true
+}
 
 lspconfig.efm.setup {
     on_attach = function(client)
@@ -22,7 +25,9 @@ lspconfig.efm.setup {
         client.resolved_capabilities.goto_definition = false
         vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync{}")
     end,
-    root_dir = function() return vim.fn.getcwd() end,
+    root_dir = function()
+        return vim.fn.getcwd()
+    end,
     settings = {
         languages = {
             lua = {lua_format},

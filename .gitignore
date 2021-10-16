@@ -1,6 +1,9 @@
 # Plugins directory
 plugged/
 
+# Lua language server
+lua-language-server
+
 # Netrw
 .netrwhist
 

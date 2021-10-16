@@ -17,6 +17,7 @@ Plug 'hashivim/vim-terraform'
 Plug 'sheerun/vim-polyglot'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'folke/lua-dev.nvim'
 call plug#end()
 
 filetype plugin on
@@ -116,6 +117,7 @@ nnoremap <silent> <C-p> <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
 
 " Configs
 luafile ~/.config/nvim/lua/lsp/global.lua
+luafile ~/.config/nvim/lua/lsp/lua-dev.lua
 luafile ~/.config/nvim/lua/lsp/compe.lua
 luafile ~/.config/nvim/lua/lsp/tsserver.lua
 luafile ~/.config/nvim/lua/lsp/efm.lua

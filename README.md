@@ -5,6 +5,7 @@
 	- Language servers:
 		- efm
 		- gopls
+		- lua-language-server
 		- terraform-ls
 		- tsserver
 		- yamlls
