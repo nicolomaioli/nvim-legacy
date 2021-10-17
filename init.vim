@@ -55,11 +55,12 @@ silent! helptags ALL
 
 colorscheme nord
 
+" Highlight extra whitespaces in loud red
 highlight ExtraWhitespace ctermbg=red guibg=red
 au InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 au InsertLeave * match ExtraWhitespace /\s\+$/
 
-" OS Specific configuration
+" --- OS
 if !exists("g:os")
 	if has("win64") || has("win32") || has("win16")
 		let g:os = "Windows"
@@ -76,10 +77,38 @@ elseif g:os == "Linux"
 	let g:python3_host_prog="/usr/bin/python3"
 endif
 
-" Plugin configuration
-let NERDTreeShowHidden=1
+" --- FILETYPES
+augroup myterm | au!
+	au TermOpen * if &buftype ==# 'terminal' | setlocal nonumber signcolumn=no | endif
+augroup end
 
-" Mappings
+au FileType javascript,typescript,javascriptreact,typescriptreact setlocal expandtab ts=2 sw=2
+au FileType html,css setlocal expandtab ts=2 sw=2
+au FileType json,yaml setlocal expandtab ts=2 sw=2
+au FileType markdown setlocal spell
+au FileType c setlocal expandtab ts=4 sw=4
+
+" --- PLUGINS
+luafile ~/.config/nvim/lua/lsp/global.lua
+luafile ~/.config/nvim/lua/lsp/lua-language-server.lua
+luafile ~/.config/nvim/lua/lsp/compe.lua
+luafile ~/.config/nvim/lua/lsp/tsserver.lua
+luafile ~/.config/nvim/lua/lsp/efm.lua
+luafile ~/.config/nvim/lua/lsp/gopls.lua
+luafile ~/.config/nvim/lua/lsp/yaml.lua
+luafile ~/.config/nvim/lua/lsp/terraform.lua
+luafile ~/.config/nvim/lua/plugins/lualine.lua
+luafile ~/.config/nvim/lua/plugins/nvim-toggleterm.lua
+luafile ~/.config/nvim/lua/plugins/telescope.lua
+
+let NERDTreeShowHidden=1
+let g:signify_priority = 5
+
+" --- MAPPINGS
+nnoremap <leader>gc :Git checkout
+nnoremap <leader>gn :Git checkout -b
+nnoremap <leader>gf :Git fetch<CR>
+nnoremap <leader>gl :Git pull<CR>
 nnoremap <leader>gs :Git<CR>
 nnoremap <leader>gp :Git push<CR>
 nnoremap <leader>kb :NERDTreeToggle<CR>
@@ -90,19 +119,12 @@ nnoremap <leader>cc :cclose<CR>
 nnoremap <leader>R :source $MYVIMRC<CR>
 tnoremap <C-e> <C-\><C-n>
 
-" move between windows
 nnoremap <leader>wh <C-w>h
 nnoremap <leader>wj <C-w>j
 nnoremap <leader>wk <C-w>k
 nnoremap <leader>wl <C-w>l
 nnoremap <leader>wo <C-w>o
 
-" LSP
-
-" Prioritise LSP signs over signify's diff
-let g:signify_priority = 5
-
-" Mappings
 nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>
 nnoremap <silent> gD <cmd>lua vim.lsp.buf.declaration()<CR>
 nnoremap <silent> gr <cmd>lua vim.lsp.buf.references()<CR>
@@ -114,35 +136,8 @@ nnoremap <silent> <C-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
 nnoremap <silent> <C-n> <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
 nnoremap <silent> <C-p> <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
 
-" Configs
-luafile ~/.config/nvim/lua/lsp/global.lua
-luafile ~/.config/nvim/lua/lsp/lua-language-server.lua
-luafile ~/.config/nvim/lua/lsp/compe.lua
-luafile ~/.config/nvim/lua/lsp/tsserver.lua
-luafile ~/.config/nvim/lua/lsp/efm.lua
-luafile ~/.config/nvim/lua/lsp/gopls.lua
-luafile ~/.config/nvim/lua/lsp/yaml.lua
-luafile ~/.config/nvim/lua/lsp/terraform.lua
-
-" Load lua plugins
-luafile ~/.config/nvim/lua/plugins/lualine.lua
-luafile ~/.config/nvim/lua/plugins/nvim-toggleterm.lua
-luafile ~/.config/nvim/lua/plugins/telescope.lua
-
-" Telescope
 nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
 nnoremap <leader>fz <cmd>lua require('telescope.builtin').file_browser()<cr>
 nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
 nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
 nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
-
-" Filetype specific
-augroup myterm | au!
-	au TermOpen * if &buftype ==# 'terminal' | setlocal nonumber signcolumn=no | endif
-augroup end
-
-au FileType javascript,typescript,javascriptreact,typescriptreact setlocal expandtab ts=2 sw=2
-au FileType html,css setlocal expandtab ts=2 sw=2
-au FileType json,yaml setlocal expandtab ts=2 sw=2
-au FileType markdown setlocal spell
-au FileType c setlocal expandtab ts=4 sw=4
