@@ -4,5 +4,6 @@ require'lspconfig'.tsserver.setup {
             client.config.flags.allow_incremental_sync = true
         end
         client.resolved_capabilities.document_formatting = false
-    end
+    end,
+    filetypes = {"typescript", "typescriptreact"}
 }
