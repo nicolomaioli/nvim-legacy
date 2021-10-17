@@ -130,7 +130,7 @@ luafile ~/.config/nvim/lua/plugins/nvim-toggleterm.lua
 luafile ~/.config/nvim/lua/plugins/telescope.lua
 
 " Telescope
-nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files({find_command = {"rg", "--files", "--iglob", "!.git", "--hidden"}, previewer = false})<cr>
+nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
 nnoremap <leader>fz <cmd>lua require('telescope.builtin').file_browser()<cr>
 nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
 nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
