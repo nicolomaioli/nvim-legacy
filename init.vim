@@ -107,6 +107,11 @@ let NERDTreeShowHidden=1
 let g:signify_priority = 5
 
 " --- MAPPINGS
+
+"  folding:
+"  zc close fold
+"  zo open fold
+
 nnoremap <leader>gc :Git checkout
 nnoremap <leader>gn :Git checkout -b
 nnoremap <leader>gf :Git fetch<CR>
