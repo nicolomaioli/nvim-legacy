@@ -109,6 +109,7 @@ let g:signify_priority = 5
 " --- MAPPINGS
 
 "  folding:
+"  zx enable fold: https://github.com/nvim-telescope/telescope.nvim/issues/699
 "  zc close fold
 "  zo open fold
 
