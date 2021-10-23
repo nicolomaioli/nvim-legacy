@@ -5,6 +5,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'neovim/nvim-lspconfig'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'hrsh7th/nvim-compe'
 Plug 'mfussenegger/nvim-dap'
 Plug 'hoob3rt/lualine.nvim'
@@ -15,7 +16,6 @@ Plug 'Raimondi/delimitMate'
 Plug 'scrooloose/nerdtree'
 Plug 'akinsho/nvim-toggleterm.lua'
 Plug 'hashivim/vim-terraform'
-Plug 'sheerun/vim-polyglot'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 call plug#end()
@@ -37,8 +37,6 @@ set laststatus=2
 set ignorecase
 set smartcase
 set showcmd
-set foldmethod=indent
-set foldlevel=99
 set splitbelow
 set splitright
 set spelllang=en_gb
@@ -51,6 +49,8 @@ set noswapfile
 set updatetime=300
 set shortmess+=c
 set signcolumn=yes
+set foldmethod=expr
+set foldexpr=nvim_treesitter#foldexpr()
 set omnifunc=syntaxcomplete#Complete
 silent! helptags ALL
 
@@ -90,6 +90,7 @@ au FileType markdown setlocal spell
 au FileType c setlocal expandtab ts=4 sw=4
 
 " --- PLUGINS
+luafile ~/.config/nvim/lua/plugins/tree-sitter.lua
 luafile ~/.config/nvim/lua/lsp/global.lua
 luafile ~/.config/nvim/lua/lsp/lua-language-server.lua
 luafile ~/.config/nvim/lua/lsp/compe.lua
