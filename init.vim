@@ -6,6 +6,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/nvim-compe'
+Plug 'mfussenegger/nvim-dap'
 Plug 'hoob3rt/lualine.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'mattn/emmet-vim'
@@ -135,6 +136,12 @@ nnoremap <silent> <leader>rn <cmd>lua vim.lsp.buf.rename()<CR>
 nnoremap <silent> <C-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
 nnoremap <silent> <C-n> <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
 nnoremap <silent> <C-p> <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
+
+nnoremap <leader>db :lua require('dap').toggle_breakpoint()<CR>
+nnoremap <leader>dc :lua require('dap').continue()<CR>
+nnoremap <leader>do :lua require('dap').step_over()<CR>
+nnoremap <leader>di :lua require('dap').step_into()<CR>
+nnoremap <leader>dr :lua require('dap').repl.open({}, 'vsplit')<CR>
 
 nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
 nnoremap <leader>fz <cmd>lua require('telescope.builtin').file_browser()<cr>
