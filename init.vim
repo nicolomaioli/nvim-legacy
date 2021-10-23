@@ -51,6 +51,8 @@ set shortmess+=c
 set signcolumn=yes
 set foldmethod=expr
 set foldexpr=nvim_treesitter#foldexpr()
+set foldlevel=99
+set foldlevelstart=99
 set omnifunc=syntaxcomplete#Complete
 silent! helptags ALL
 
