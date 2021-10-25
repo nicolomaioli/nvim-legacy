@@ -116,12 +116,6 @@ let g:signify_priority = 5
 "  zc close fold
 "  zo open fold
 
-nnoremap <leader>gc :Git checkout
-nnoremap <leader>gn :Git checkout -b
-nnoremap <leader>gf :Git fetch<CR>
-nnoremap <leader>gl :Git pull<CR>
-nnoremap <leader>gs :Git<CR>
-nnoremap <leader>gp :Git push<CR>
 nnoremap <leader>kb :NERDTreeToggle<CR>
 nnoremap <leader>sd :let @/=""<CR>
 nnoremap <leader>sr :%s/
@@ -137,6 +131,13 @@ nnoremap <leader>wk <C-w>k
 nnoremap <leader>wl <C-w>l
 nnoremap <leader>wo <C-w>o
 
+nnoremap <leader>gc :Git checkout
+nnoremap <leader>gn :Git checkout -b
+nnoremap <leader>gf :Git fetch<CR>
+nnoremap <leader>gl :Git pull<CR>
+nnoremap <leader>gs :Git<CR>
+nnoremap <leader>gp :Git push<CR>
+
 nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>
 nnoremap <silent> gD <cmd>lua vim.lsp.buf.declaration()<CR>
 nnoremap <silent> gr <cmd>lua vim.lsp.buf.references()<CR>
@@ -148,14 +149,14 @@ nnoremap <silent> <C-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
 nnoremap <silent> <C-n> <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
 nnoremap <silent> <C-p> <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
 
-nnoremap <leader>db :lua require('dap').toggle_breakpoint()<CR>
-nnoremap <leader>dc :lua require('dap').continue()<CR>
-nnoremap <leader>do :lua require('dap').step_over()<CR>
-nnoremap <leader>di :lua require('dap').step_into()<CR>
-nnoremap <leader>dr :lua require('dap').repl.open({}, 'vsplit')<CR>
-
 nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
 nnoremap <leader>fz <cmd>lua require('telescope.builtin').file_browser()<cr>
 nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
 nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
 nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
+
+nnoremap <leader>db :lua require('dap').toggle_breakpoint()<CR>
+nnoremap <leader>dc :lua require('dap').continue()<CR>
+nnoremap <leader>do :lua require('dap').step_over()<CR>
+nnoremap <leader>di :lua require('dap').step_into()<CR>
+nnoremap <leader>dr :lua require('dap').repl.open({}, 'vsplit')<CR>
