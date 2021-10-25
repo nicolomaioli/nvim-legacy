@@ -6,6 +6,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/playground'
 Plug 'hrsh7th/nvim-compe'
 Plug 'mfussenegger/nvim-dap'
 Plug 'hoob3rt/lualine.nvim'
@@ -127,6 +128,7 @@ nnoremap <leader>sr :%s/
 nnoremap <leader>cl :close<CR>
 nnoremap <leader>cc :cclose<CR>
 nnoremap <leader>R :source $MYVIMRC<CR>
+nnoremap <leader>tp :TSPlaygroundToggle<CR>
 tnoremap <C-e> <C-\><C-n>
 
 nnoremap <leader>wh <C-w>h
