@@ -1,5 +1,5 @@
 call plug#begin('~/.config/nvim/plugged')
-Plug 'shaunsingh/nord.nvim'
+Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
@@ -57,8 +57,6 @@ set foldlevelstart=99
 set omnifunc=syntaxcomplete#Complete
 silent! helptags ALL
 
-colorscheme nord
-
 " Highlight extra whitespaces in loud red
 highlight ExtraWhitespace ctermbg=red guibg=red
 au InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
@@ -108,6 +106,7 @@ luafile ~/.config/nvim/lua/plugins/telescope.lua
 
 let NERDTreeShowHidden=1
 let g:signify_priority = 5
+colorscheme dracula
 
 " --- MAPPINGS
 
