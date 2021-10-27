@@ -5,5 +5,7 @@ require'lspconfig'.tsserver.setup {
         end
         client.resolved_capabilities.document_formatting = false
     end,
-    filetypes = {"typescript", "typescriptreact"}
+    filetypes = {
+        "typescript", "typescriptreact", "javascript", "javascriptreact"
+    }
 }
