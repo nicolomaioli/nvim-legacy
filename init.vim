@@ -57,11 +57,6 @@ set foldlevelstart=99
 set omnifunc=syntaxcomplete#Complete
 silent! helptags ALL
 
-" Highlight extra whitespaces in loud red
-highlight ExtraWhitespace ctermbg=red guibg=red
-au InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
-au InsertLeave * match ExtraWhitespace /\s\+$/
-
 " --- OS
 if !exists("g:os")
 	if has("win64") || has("win32") || has("win16")
@@ -107,6 +102,11 @@ luafile ~/.config/nvim/lua/plugins/telescope.lua
 let NERDTreeShowHidden=1
 let g:signify_priority = 5
 colorscheme dracula
+
+" Highlight extra whitespaces in loud red
+highlight ExtraWhitespace ctermbg=red guibg=red
+au InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+au InsertLeave * match ExtraWhitespace /\s\+$/
 
 " --- MAPPINGS
 
