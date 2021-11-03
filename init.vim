@@ -3,18 +3,17 @@ Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
-Plug 'tpope/vim-unimpaired'
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 Plug 'nvim-treesitter/playground'
+Plug 'windwp/nvim-autopairs'
 Plug 'hrsh7th/nvim-compe'
 Plug 'mfussenegger/nvim-dap'
 Plug 'hoob3rt/lualine.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'mattn/emmet-vim'
 Plug 'mhinz/vim-signify'
-Plug 'Raimondi/delimitMate'
 Plug 'scrooloose/nerdtree'
 Plug 'akinsho/nvim-toggleterm.lua'
 Plug 'hashivim/vim-terraform'
@@ -89,6 +88,7 @@ au FileType c setlocal expandtab ts=4 sw=4
 " --- PLUGINS
 luafile ~/.config/nvim/lua/plugins/tree-sitter.lua
 luafile ~/.config/nvim/lua/plugins/tree-sitter-textobjects.lua
+luafile ~/.config/nvim/lua/plugins/autopairs.lua
 luafile ~/.config/nvim/lua/lsp/global.lua
 luafile ~/.config/nvim/lua/lsp/lua-language-server.lua
 luafile ~/.config/nvim/lua/lsp/compe.lua
