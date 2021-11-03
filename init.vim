@@ -98,7 +98,7 @@ luafile ~/.config/nvim/lua/lsp/gopls.lua
 luafile ~/.config/nvim/lua/lsp/yaml.lua
 luafile ~/.config/nvim/lua/lsp/terraform.lua
 luafile ~/.config/nvim/lua/plugins/lualine.lua
-luafile ~/.config/nvim/lua/plugins/nvim-toggleterm.lua
+luafile ~/.config/nvim/lua/plugins/toggleterm.lua
 luafile ~/.config/nvim/lua/plugins/telescope.lua
 
 let NERDTreeShowHidden=1
