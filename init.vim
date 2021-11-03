@@ -6,6 +6,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 Plug 'nvim-treesitter/playground'
 Plug 'hrsh7th/nvim-compe'
 Plug 'mfussenegger/nvim-dap'
@@ -87,6 +88,7 @@ au FileType c setlocal expandtab ts=4 sw=4
 
 " --- PLUGINS
 luafile ~/.config/nvim/lua/plugins/tree-sitter.lua
+luafile ~/.config/nvim/lua/plugins/tree-sitter-textobjects.lua
 luafile ~/.config/nvim/lua/lsp/global.lua
 luafile ~/.config/nvim/lua/lsp/lua-language-server.lua
 luafile ~/.config/nvim/lua/lsp/compe.lua
@@ -130,9 +132,9 @@ nnoremap <leader>wk <C-w>k
 nnoremap <leader>wl <C-w>l
 nnoremap <leader>wo <C-w>o
 
-nnoremap <leader>gc :Git checkout
-nnoremap <leader>gn :Git checkout -b
-nnoremap <leader>gf :Git fetch<CR>
+nnoremap <leader>Gc :Git checkout
+nnoremap <leader>Gn :Git checkout -b
+nnoremap <leader>Gf :Git fetch<CR>
 nnoremap <leader>gl :Git pull<CR>
 nnoremap <leader>gs :Git<CR>
 nnoremap <leader>gp :Git push<CR>
