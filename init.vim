@@ -57,6 +57,17 @@ set foldlevelstart=99
 set omnifunc=syntaxcomplete#Complete
 silent! helptags ALL
 
+" Grep with RipGrep
+set grepprg=rg\ --vimgrep\ -S
+set grepformat=%f:%l:%c:%m
+
+augroup quickfix
+	" Automatically open the quickfix after grepping
+    autocmd!
+    autocmd QuickFixCmdPost [^l]* cwindow
+    autocmd QuickFixCmdPost l*    lwindow
+augroup END
+
 " --- OS
 if !exists("g:os")
 	if has("win64") || has("win32") || has("win16")
