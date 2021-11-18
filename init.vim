@@ -28,6 +28,9 @@ let mapleader=" "
 set shm+=I
 set termguicolors
 set number
+set listchars+=tab:>-
+set listchars+=space:·
+set list
 set colorcolumn=80
 set textwidth=79
 set linebreak
@@ -63,9 +66,9 @@ set grepformat=%f:%l:%c:%m
 
 augroup quickfix
 	" Automatically open the quickfix after grepping
-    autocmd!
-    autocmd QuickFixCmdPost [^l]* cwindow
-    autocmd QuickFixCmdPost l*    lwindow
+	autocmd!
+	autocmd QuickFixCmdPost [^l]* cwindow
+	autocmd QuickFixCmdPost l*    lwindow
 augroup END
 
 " --- OS
