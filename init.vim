@@ -161,8 +161,8 @@ nnoremap <silent> ca <cmd>lua vim.lsp.buf.code_action()<CR>
 nnoremap <silent> K <cmd>lua vim.lsp.buf.hover()<CR>
 nnoremap <silent> <leader>rn <cmd>lua vim.lsp.buf.rename()<CR>
 nnoremap <silent> <C-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
-nnoremap <silent> <C-n> <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
-nnoremap <silent> <C-p> <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
+nnoremap <silent> <C-n> <cmd>lua vim.diagnostic.goto_prev({ float =  { border = "single" }})<CR>
+nnoremap <silent> <C-p> <cmd>lua vim.diagnostic.goto_next({ float =  { border = "single" }})<CR>
 
 nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
 nnoremap <leader>fz <cmd>lua require('telescope.builtin').file_browser()<cr>
