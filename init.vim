@@ -106,7 +106,6 @@ luafile ~/.config/nvim/lua/plugins/tree-sitter.lua
 luafile ~/.config/nvim/lua/plugins/tree-sitter-textobjects.lua
 luafile ~/.config/nvim/lua/plugins/autopairs.lua
 luafile ~/.config/nvim/lua/lsp/global.lua
-luafile ~/.config/nvim/lua/lsp/lua-language-server.lua
 luafile ~/.config/nvim/lua/lsp/compe.lua
 luafile ~/.config/nvim/lua/lsp/tsserver.lua
 luafile ~/.config/nvim/lua/lsp/efm.lua
