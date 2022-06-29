@@ -21,6 +21,8 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
+Plug 'tpope/vim-dispatch'
+Plug 'vim-test/vim-test'
 call plug#end()
 
 filetype plugin on
@@ -52,7 +54,7 @@ set nobackup
 set nowritebackup
 set noswapfile
 set updatetime=300
-set shortmess+=c
+set shm+=c
 set signcolumn=yes
 set foldmethod=expr
 set foldexpr=nvim_treesitter#foldexpr()
@@ -174,5 +176,13 @@ nnoremap <leader>dc :lua require('dap').continue()<CR>
 nnoremap <leader>do :lua require('dap').step_over()<CR>
 nnoremap <leader>di :lua require('dap').step_into()<CR>
 nnoremap <leader>dr :lua require('dap').repl.open({}, 'vsplit')<CR>
+
+" Testing
+let test#strategy = "dispatch"
+nmap <silent> <leader>tn :TestNearest<CR>
+nmap <silent> <leader>tf :TestFile<CR>
+nmap <silent> <leader>ta :TestSuite<CR>
+nmap <silent> <leader>tl :TestLast<CR>
+nmap <silent> <leader>tg :TestVisit<CR>
 
 nnoremap <F9> :Goyo<CR>
