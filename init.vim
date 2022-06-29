@@ -27,7 +27,6 @@ filetype plugin on
 syntax enable
 runtime! macros/matchit.vim
 let mapleader=" "
-set shm+=I
 set termguicolors
 set number
 set listchars+=tab:>-
