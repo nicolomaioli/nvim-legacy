@@ -137,7 +137,6 @@ nnoremap <leader>sr :%s/
 nnoremap <leader>cl :close<CR>
 nnoremap <leader>cc :cclose<CR>
 nnoremap <leader>R :source $MYVIMRC<CR>
-nnoremap <leader>tp :TSPlaygroundToggle<CR>
 tnoremap <C-e> <C-\><C-n>
 
 nnoremap <leader>wh <C-w>h
