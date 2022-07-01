@@ -170,7 +170,7 @@ nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
 nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
 nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
 
-let test#strategy="make"
+let test#strategy="neovim"
 let test#javascript#runner="jest"
 let test#javascript#jest#executable="npm test --"
 
