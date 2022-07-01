@@ -173,6 +173,7 @@ nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
 let test#strategy="neovim"
 let test#javascript#runner="jest"
 let test#javascript#jest#executable="npm test --"
+" This open test in insert mode, use C-e to navigate test result
 
 nmap <leader>tt :TestNearest<CR>
 nmap <leader>tf :TestFile<CR>
