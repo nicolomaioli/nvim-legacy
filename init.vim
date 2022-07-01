@@ -21,10 +21,7 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
-Plug 'antoinemadec/FixCursorHold.nvim'
-Plug 'nvim-neotest/neotest'
-Plug 'nvim-neotest/neotest-vim-test'
-Plug 'haydenmeade/neotest-jest'
+Plug 'vim-test/vim-test'
 call plug#end()
 
 filetype plugin on
@@ -118,7 +115,6 @@ luafile ~/.config/nvim/lua/lsp/terraform.lua
 luafile ~/.config/nvim/lua/plugins/lualine.lua
 luafile ~/.config/nvim/lua/plugins/toggleterm.lua
 luafile ~/.config/nvim/lua/plugins/telescope.lua
-luafile ~/.config/nvim/lua/plugins/neotest.lua
 
 let NERDTreeShowHidden=1
 let g:signify_priority = 5
@@ -174,8 +170,15 @@ nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
 nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
 nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
 
-nnoremap <leader>tf <cmd>lua require("neotest").run.run({vim.fn.expand("%"), strategy = "integrated"})<cr>
-nnoremap <leader>ts <cmd>lua require("neotest").summary.toggle()<cr>
+let test#strategy="make"
+let test#javascript#runner="jest"
+let test#javascript#jest#executable="npm test --"
+
+nmap <leader>tt :TestNearest<CR>
+nmap <leader>tf :TestFile<CR>
+nmap <leader>ts :TestSuite<CR>
+nmap <leader>tl :TestLast<CR>
+nmap <leader>tv :TestVisit<CR>
 
 nnoremap <leader>db :lua require('dap').toggle_breakpoint()<CR>
 nnoremap <leader>dc :lua require('dap').continue()<CR>
