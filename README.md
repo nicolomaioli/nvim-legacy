@@ -13,7 +13,11 @@ brew install --HEAD tree-sitter luajit neovim
 	- Language servers:
 		- efm
 		- gopls
-		- lua-language-server
+		- lua-language-server:
+			+ Install `cmake`
+			+ Install `lua-language-server` from [here](https://github.com/sumneko/lua-language-server/wiki/PreCompiled-Binaries)
+			+ Install `luarocks`
+			+ Install `luaformatter` from [here](https://github.com/Koihik/LuaFormatter)
 		- terraform-ls
 		- tsserver
 		- yamlls

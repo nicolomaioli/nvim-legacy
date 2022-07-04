@@ -112,6 +112,7 @@ luafile ~/.config/nvim/lua/lsp/efm.lua
 luafile ~/.config/nvim/lua/lsp/gopls.lua
 luafile ~/.config/nvim/lua/lsp/yaml.lua
 luafile ~/.config/nvim/lua/lsp/terraform.lua
+luafile ~/.config/nvim/lua/lsp/lua-language-server.lua
 luafile ~/.config/nvim/lua/plugins/lualine.lua
 luafile ~/.config/nvim/lua/plugins/toggleterm.lua
 luafile ~/.config/nvim/lua/plugins/telescope.lua
