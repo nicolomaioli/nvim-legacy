@@ -22,5 +22,6 @@ npm i -g \
 ```
 
 - Post-install:
+	- Install [vim-plug](https://github.com/junegunn/vim-plug)
 	- `$ nvim +PlugInstall`
 	- `$ nvim +checkhealth`
