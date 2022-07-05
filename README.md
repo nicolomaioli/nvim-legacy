@@ -8,13 +8,13 @@ brew install \
 	neovim \
 	lua-language-server \
 	luarocks \
-	eslint_d \
 	terraform-ls \
 	efm-langserver \
 	ripgrep \
 	go \
 	node
 npm i -g \
+	eslint_d \
 	prettier \
 	typescript-language-server \
 	typescript \
